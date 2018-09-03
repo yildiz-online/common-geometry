@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - oraclejdk9
+
+script:
+  - mvn -V -B -s settings.xml test
+install:
+  - mvn -V -B -s settings.xml clean install
