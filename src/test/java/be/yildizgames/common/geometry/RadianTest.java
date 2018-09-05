@@ -29,7 +29,9 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static be.yildizgames.common.geometry.Radian.PI2;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RadianTest {
 
@@ -101,16 +103,52 @@ class RadianTest {
     @Nested
     class HashCode {
 
+        @Test
+        void test() {
+            Radian r = Radian.fromDegree(180.0f);
+            assertEquals(1078530042, r.hashCode());
+        }
+
     }
 
     @Nested
     class Equals {
+
+        @Test
+        void withNull() {
+            assertNotEquals(null, Radian.fromDegree(180.0f));
+        }
+
+        @Test
+        void sameObject() {
+            Radian r = Radian.fromDegree(180.0f);
+            assertEquals(r, r);
+        }
+
+        @Test
+        void sameValue() {
+            assertEquals(Radian.fromDegree(180.0f), Radian.fromDegree(180.0f));
+        }
+
+        @Test
+        void differentValue() {
+            assertNotEquals(Radian.fromDegree(181.0f), Radian.fromDegree(180.0f));
+        }
+
+        @Test
+        void differentObject() {
+            assertNotEquals("180", Radian.fromDegree(180.0f));
+        }
 
     }
 
     @Nested
     class ToString {
 
+        @Test
+        void test() {
+            assertEquals("Radian value: 3.1415927", Radian.fromDegree(180.0f).toString());
+        }
     }
 
 }

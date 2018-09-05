@@ -71,7 +71,7 @@ public final class Rectangle {
      * @param y Y coordinate for the point to check.
      * @return true if the point is within this rectangle.
      */
-    public boolean contain(final int x, final int y) {
+    public boolean contain(final float x, final float y) {
         int x1;
         int x2;
         if (this.left <= this.right) {
@@ -102,7 +102,7 @@ public final class Rectangle {
      * @return true if the point is within this rectangle.
      */
     public boolean contain(final Point2D point) {
-        return this.contain(point.getX(), point.getY());
+        return this.contain(point.x, point.y);
     }
 
     /**

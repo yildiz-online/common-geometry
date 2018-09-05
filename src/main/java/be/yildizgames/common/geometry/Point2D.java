@@ -30,7 +30,6 @@ package be.yildizgames.common.geometry;
  * @author Grégory Van den Borre
  */
 public final class Point2D {
-
     /**
      * 0,0 coordinate point.
      */
@@ -39,42 +38,27 @@ public final class Point2D {
     /**
      * X coordinate.
      */
-    private int x;
+    public final float x;
 
     /**
      * Y coordinate.
      */
-    private int y;
+    public final float y;
 
     /**
-     * Simple constructor.
-     */
-    public Point2D() {
-        super();
-    }
-
-    /**
-     * Full constructor.
+     * Full constructor, convert double into float.
      *
      * @param xValue Initialize The point x value.
      * @param yValue Initialize The point y value.
      */
-    public Point2D(final int xValue, final int yValue) {
-        this();
+    private Point2D(final float xValue, final float yValue) {
+        super();
         this.x = xValue;
         this.y = yValue;
     }
 
-    /**
-     * Full constructor, convert double into int.
-     *
-     * @param xValue Initialize The point x value.
-     * @param yValue Initialize The point y value.
-     */
-    public Point2D(final double xValue, final double yValue) {
-        this();
-        this.x = (int) xValue;
-        this.y = (int) yValue;
+    public static Point2D valueOf(float x, float y) {
+        return new Point2D(x, y);
     }
 
     /**
@@ -82,19 +66,20 @@ public final class Point2D {
      *
      * @param xValue Values to add to this point X value.
      * @param yValue Values to add to this point Y value.
+     * @return The newly created point.
      */
-    public void add(final int xValue, final int yValue) {
-        this.setX(this.x + xValue);
-        this.setY(this.y + yValue);
+    public Point2D add(final float xValue, final float yValue) {
+        return new Point2D(this.x + xValue, this.y + yValue);
     }
 
     /**
      * Add this point values by the parameter point values.
      *
      * @param point Values to use.
+     * @return The newly created point.
      */
-    public void add(final Point2D point) {
-        this.add(point.x, point.y);
+    public Point2D add(final Point2D point) {
+        return this.add(point.x, point.y);
     }
 
     /**
@@ -115,55 +100,14 @@ public final class Point2D {
     }
 
     /**
-     * Compute the angle formed by this point.
-     *
-     * @return The computed angle.
-     */
-    public float getAngle() {
-        return (float) Math.atan2(this.y, this.x);
-    }
-
-    /**
-     * @return The x value.
-     */
-    public int getX() {
-        return this.x;
-    }
-
-    /**
-     * Update the Point x value.
-     *
-     * @param xValue New value for the point x value.
-     */
-    public void setX(final int xValue) {
-        this.x = xValue;
-    }
-
-    /**
-     * @return The y value.
-     */
-    public int getY() {
-        return this.y;
-    }
-
-    /**
-     * Update the Point y value.
-     *
-     * @param yValue New value for the point y value.
-     */
-    public void setY(final int yValue) {
-        this.y = yValue;
-    }
-
-    /**
      * @return A hash code computed from the x and y values.
      */
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + this.x;
-        result = prime * result + this.y;
+        result = prime * result + (int)this.x;
+        result = prime * result + (int)this.y;
         return result;
     }
 
@@ -171,30 +115,10 @@ public final class Point2D {
      * Multiply the point x and y by the scalar value.
      *
      * @param scalar Value to multiply.
+     * @return The newly created point.
      */
-    public void multiplyByScalar(final int scalar) {
-        this.setX(this.x * scalar);
-        this.setY(this.y * scalar);
-    }
-
-    /**
-     * Set new values.
-     *
-     * @param xValue x new value to set.
-     * @param yValue y new value to set.
-     */
-    public void setValues(final int xValue, final int yValue) {
-        this.setX(xValue);
-        this.setY(yValue);
-    }
-
-    /**
-     * Set the values from an other YzPoint.
-     *
-     * @param value Point to copy.
-     */
-    public void setValues(final Point2D value) {
-        this.setValues(value.x, value.y);
+    public Point2D multiplyByScalar(final float scalar) {
+        return new Point2D(this.x * scalar, this.y * scalar);
     }
 
     /**
@@ -202,19 +126,20 @@ public final class Point2D {
      *
      * @param xValue Values to remove from this point X value.
      * @param yValue Values to remove from this point Y value.
+     * @return The newly created point.
      */
-    public void substract(final int xValue, final int yValue) {
-        this.setX(this.x - xValue);
-        this.setY(this.y - yValue);
+    public Point2D subtract(final float xValue, final float yValue) {
+        return new Point2D(this.x - xValue, this.y - yValue);
     }
 
     /**
      * Subtract this point values by the parameter point values.
      *
      * @param point Values to use.
+     * @return The newly created point.
      */
-    public void substract(final Point2D point) {
-        this.substract(point.x, point.y);
+    public Point2D subtract(final Point2D point) {
+        return this.subtract(point.x, point.y);
     }
 
     /**

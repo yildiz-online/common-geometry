@@ -41,7 +41,7 @@ public class Radian {
     /**
      * Full constructor.
      *
-     * @param radian initialize the radiant value.
+     * @param radian initialize the radian value.
      */
     private Radian(final double radian) {
         super();

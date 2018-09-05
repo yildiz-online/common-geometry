@@ -23,19 +23,15 @@
  */
 package be.yildizgames.common.geometry;
 
-public class Size2 {
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-    public final float width;
+class Size2Test {
 
-    public final float height;
-
-    private Size2(float width, float height) {
-        this.width = width;
-        this.height = height;
+    @Test
+    void constructor() {
+        Size2 s = Size2.valueOf(4,5.2f);
+        Assertions.assertEquals(4, s.width, 0.001);
+        Assertions.assertEquals(5.2f, s.height, 0.001);
     }
-
-    public static Size2 valueOf(final float width, final float height) {
-        return new Size2(width, height);
-    }
-
 }

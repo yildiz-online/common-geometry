@@ -51,7 +51,7 @@ final class RectangleTest {
     @Test
     void containsTest() {
 
-        Point2D p = new Point2D(BETWEEN_LEFT_AND_RIGHT, BETWEEN_TOP_AND_BOTTOM);
+        Point2D p = Point2D.valueOf(BETWEEN_LEFT_AND_RIGHT, BETWEEN_TOP_AND_BOTTOM);
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(r.contain(LEFT, TOP));
         assertTrue(r.contain(RIGHT, BOTTOM));
