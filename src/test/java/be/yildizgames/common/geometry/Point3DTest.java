@@ -1,7 +1,7 @@
 /*
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
  *
- *  Copyright (c) 2018 Grégory Van den Borre
+ *  Copyright (c) 2018 Gregory Van den Borre
  *
  *  More infos available: https://www.yildiz-games.be
  *
@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * @author Grégory Van den Borre
+ * @author Gregory Van den Borre
  */
 final class Point3DTest {
 
