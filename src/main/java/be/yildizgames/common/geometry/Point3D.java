@@ -33,29 +33,29 @@ public final class Point3D {
 
     private static final float EPSILON = 0.00001f;
 
-    public static final Point3D INVERT_X = valueOfX(-1);
+    public static final Point3D X_NEGATIVE = valueOfX(-1);
 
     /**
      * Constant with Y = -1.
      */
-    public static final Point3D INVERT_Y = valueOfY(-1);
+    public static final Point3D Y_NEGATIVE = valueOfY(-1);
 
     /**
      * Constant with Z = -1.
      */
-    public static final Point3D INVERT_Z = valueOfZ(-1);
+    public static final Point3D Z_NEGATIVE = valueOfZ(-1);
 
-    public static final Point3D X = valueOfX(1);
+    public static final Point3D X_POSITIVE = valueOfX(1);
 
     /**
      * Constant with Y = 1.
      */
-    public static final Point3D Y = valueOfY(1);
+    public static final Point3D Y_POSITIVE = valueOfY(1);
 
     /**
      * Constant with Z = -1.
      */
-    public static final Point3D Z = valueOfZ(1);
+    public static final Point3D Z_POSITIVE = valueOfZ(1);
 
     /**
      * Constant with all values as 0.
@@ -65,7 +65,7 @@ public final class Point3D {
     /**
      * Initial direction for all built object, axis is -Z.
      */
-    public static final Point3D BASE_DIRECTION = INVERT_Z;
+    public static final Point3D BASE_DIRECTION = Z_NEGATIVE;
 
 
     /**
