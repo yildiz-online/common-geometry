@@ -24,6 +24,7 @@
 
 package be.yildizgames.common.geometry;
 
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -66,12 +67,38 @@ class Point2DTest {
         assertEquals(this.point.y, Point2DTest.Y, 0.0001);
     }
 
-    /***/
-    @Test
-    void testEquals() {
-        assertNotEquals(null, this.point);
-        assertNotEquals(this.point, new Rectangle());
-        assertEquals(this.point, this.point);
+    @Nested
+    class Equals {
+
+        @Test
+        void withNull() {
+            assertNotEquals(null, point);
+        }
+
+        @Test
+        void withWrongType() {
+            assertNotEquals(point, "");
+        }
+
+        @Test
+        void sameObject() {
+            assertEquals(point, point);
+        }
+
+        @Test
+        void sameValue() {
+            assertEquals(point, Point2D.valueOf(point.x, point.y));
+        }
+
+        @Test
+        void differentX() {
+            assertNotEquals(point, Point2D.valueOf(point.x + 1, point.y));
+        }
+
+        @Test
+        void differentY() {
+            assertNotEquals(point, Point2D.valueOf(point.x, point.y + 1));
+        }
     }
 
     /***/

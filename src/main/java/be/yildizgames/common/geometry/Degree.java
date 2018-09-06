@@ -21,69 +21,37 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  SOFTWARE.
  *
  */
-
 package be.yildizgames.common.geometry;
 
-/**
- * This class represent a radian angle.
- *
- * @author Gregory Van den Borre
- */
-public class Radian {
+public class Degree {
 
-    public static final double PI2 = Math.PI * 2d;
+    public static final Degree ZERO = new Degree(0.0f);
 
-    /**
-     * Value of the angle.
-     */
+    public static final Degree HALF = new Degree(180.0f);
+
+    public static final Degree FULL = new Degree(360.0f);
+
     public final float angle;
 
-    /**
-     * Full constructor.
-     *
-     * @param radian initialize the radian value.
-     */
-    private Radian(final double radian) {
+    private Degree(final float value) {
         super();
-        this.angle = (float)radian;
+        this.angle = value;
     }
 
-    public static Radian valueOf(final float radian) {
-        assert radian >= -0.00001f && radian <= PI2 + 0.00001f;
-        return new Radian(radian);
+    public static Degree valueOf(final float value) {
+        return new Degree(value);
     }
 
-    public static Radian valueOf(final Degree degree) {
-        return new Radian((degree.getUniformValue() * Math.PI) / 180.0f );
-    }
-
-    @Override
-    public final boolean equals(final Object obj) {
-        if (this == obj) {
-            return true;
+    private static float computeUniformValue(float v) {
+        if(v < 0) {
+            return computeUniformValue(v + 360);
+        } else if (v > 360) {
+            return computeUniformValue(v - 360);
         }
-        if (!(obj instanceof Radian)) {
-            return false;
-        }
-        Radian other = (Radian) obj;
-        return Float.valueOf(this.angle).equals(other.angle);
+        return v;
     }
 
-    @Override
-    public final int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        int temp;
-        temp = Float.floatToIntBits(this.angle);
-        result = prime * result + temp;
-        return result;
-    }
-
-    /**
-     * @return The angle value.
-     */
-    @Override
-    public final String toString() {
-        return "Radian value: " + this.angle;
+    public float getUniformValue() {
+        return computeUniformValue(this.angle);
     }
 }

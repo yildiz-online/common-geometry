@@ -73,30 +73,30 @@ class RadianTest {
 
         @Test
         void happyFlow() {
-            Radian r = Radian.fromDegree(180.0f);
+            Radian r = Radian.valueOf(Degree.HALF);
             assertEquals(r.angle, (float)Math.PI);
         }
 
         @Test
         void lowLimit() {
-            Radian r = Radian.fromDegree(0.0f);
+            Radian r = Radian.valueOf(Degree.ZERO);
             assertEquals(r.angle, 0.0f);
         }
 
         @Test
         void highLimit() {
-            Radian r = Radian.fromDegree(360.0f);
+            Radian r = Radian.valueOf(Degree.FULL);
             assertEquals(r.angle, (float)PI2);
         }
 
         @Test
         void tooLow() {
-            assertThrows(AssertionError.class, () -> Radian.fromDegree(-1));
+            assertEquals(Radian.valueOf(Degree.valueOf(359)), Radian.valueOf(Degree.valueOf(-1)));
         }
 
         @Test
         void tooHigh() {
-            assertThrows(AssertionError.class, () -> Radian.fromDegree(361f));
+            assertEquals(Radian.valueOf(Degree.valueOf(1)), Radian.valueOf(Degree.valueOf(361)));
         }
     }
 
@@ -105,7 +105,7 @@ class RadianTest {
 
         @Test
         void test() {
-            Radian r = Radian.fromDegree(180.0f);
+            Radian r = Radian.valueOf(Degree.HALF);
             assertEquals(1078530042, r.hashCode());
         }
 
@@ -116,28 +116,28 @@ class RadianTest {
 
         @Test
         void withNull() {
-            assertNotEquals(null, Radian.fromDegree(180.0f));
+            assertNotEquals(null, Radian.valueOf(Degree.HALF));
         }
 
         @Test
         void sameObject() {
-            Radian r = Radian.fromDegree(180.0f);
+            Radian r = Radian.valueOf(Degree.HALF);
             assertEquals(r, r);
         }
 
         @Test
         void sameValue() {
-            assertEquals(Radian.fromDegree(180.0f), Radian.fromDegree(180.0f));
+            assertEquals(Radian.valueOf(Degree.HALF), Radian.valueOf(Degree.HALF));
         }
 
         @Test
         void differentValue() {
-            assertNotEquals(Radian.fromDegree(181.0f), Radian.fromDegree(180.0f));
+            assertNotEquals(Radian.valueOf(Degree.valueOf(181.0f)), Radian.valueOf(Degree.HALF));
         }
 
         @Test
         void differentObject() {
-            assertNotEquals("180", Radian.fromDegree(180.0f));
+            assertNotEquals("180", Radian.valueOf(Degree.HALF));
         }
 
     }
@@ -147,7 +147,7 @@ class RadianTest {
 
         @Test
         void test() {
-            assertEquals("Radian value: 3.1415927", Radian.fromDegree(180.0f).toString());
+            assertEquals("Radian value: 3.1415927", Radian.valueOf(Degree.HALF).toString());
         }
     }
 
