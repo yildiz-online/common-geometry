@@ -49,7 +49,6 @@ public class Radian {
     }
 
     public static Radian valueOf(final float radian) {
-        assert radian >= -0.00001f && radian <= PI2 + 0.00001f;
         return new Radian(radian);
     }
 

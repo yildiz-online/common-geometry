@@ -31,7 +31,6 @@ import org.junit.jupiter.api.Test;
 import static be.yildizgames.common.geometry.Radian.PI2;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RadianTest {
 
@@ -54,16 +53,6 @@ class RadianTest {
         void highLimit() {
             Radian r = Radian.valueOf((float)PI2);
             assertEquals(r.angle, (float)PI2);
-        }
-
-        @Test
-        void tooLow() {
-            assertThrows(AssertionError.class, () -> Radian.valueOf(-1));
-        }
-
-        @Test
-        void tooHigh() {
-            assertThrows(AssertionError.class, () -> Radian.valueOf(6.5f));
         }
 
     }
@@ -117,6 +106,11 @@ class RadianTest {
         @Test
         void withNull() {
             assertNotEquals(null, Radian.valueOf(Degree.HALF));
+        }
+
+        @Test
+        void differentType() {
+            assertNotEquals("", Radian.valueOf(Degree.HALF));
         }
 
         @Test
