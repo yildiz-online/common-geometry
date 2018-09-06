@@ -109,11 +109,6 @@ class RadianTest {
         }
 
         @Test
-        void differentType() {
-            assertNotEquals("", Radian.valueOf(Degree.HALF));
-        }
-
-        @Test
         void sameObject() {
             Radian r = Radian.valueOf(Degree.HALF);
             assertEquals(r, r);
@@ -131,7 +126,7 @@ class RadianTest {
 
         @Test
         void differentObject() {
-            assertNotEquals("180", Radian.valueOf(Degree.HALF));
+            assertNotEquals(Radian.valueOf(Degree.HALF), "");
         }
 
     }
