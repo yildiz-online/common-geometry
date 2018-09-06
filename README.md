@@ -57,4 +57,4 @@ In your maven project, add the dependency
 Replace LATEST with the correct version.
 
 ## Contact
-Owner of this repository: Grégory Van den Borre
+Owner of this repository: Gregory Van den Borre

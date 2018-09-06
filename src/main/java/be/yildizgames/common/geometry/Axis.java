@@ -1,7 +1,7 @@
 /*
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
  *
- *  Copyright (c) 2018 Grégory Van den Borre
+ *  Copyright (c) 2018 Gregory Van den Borre
  *
  *  More infos available: https://www.yildiz-games.be
  *
@@ -27,7 +27,7 @@ package be.yildizgames.common.geometry;
 /**
  * Possible axis in a 3 dimensional context.
  *
- * @author Grégory Van den Borre
+ * @author Gregory Van den Borre
  */
 public enum Axis {
 
