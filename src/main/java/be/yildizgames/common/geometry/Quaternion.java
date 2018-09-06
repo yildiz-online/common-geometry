@@ -56,7 +56,7 @@ public final class Quaternion {
      * @param yValue initialize Y attribute.
      * @param zValue initialize Z attribute.
      */
-    public Quaternion(final float wValue, final float xValue, final float yValue, final float zValue) {
+    private Quaternion(final float wValue, final float xValue, final float yValue, final float zValue) {
         super();
         this.w = wValue;
         this.x = xValue;
@@ -64,16 +64,19 @@ public final class Quaternion {
         this.z = zValue;
     }
 
+    public static Quaternion valueOf(float w, float x, float y, float z) {
+        return new Quaternion(w, x, y, z);
+    }
+
     /**
-     * Build a new Quaternion resulting from the multiplication of 2 other
-     * quaternions.
+     * Build a new Quaternion resulting from the multiplication of an other
+     * quaternion.
      *
-     * @param q1 1st quaternion to use.
      * @param q2 2nd quaternion to use.
      * @return the newly build Quaternion.
      */
-    public static Quaternion multiply2Quaternions(final Quaternion q1, final Quaternion q2) {
-        return new Quaternion(q1.w * q2.w - q1.x * q2.x - q1.y * q2.y - q1.z * q2.z, q1.w * q2.x + q1.x * q2.w + q1.y * q2.z - q1.z * q2.y,
-                q1.w * q2.y + q1.y * q2.w + q1.z * q2.x - q1.x * q2.z, q1.w * q2.z + q1.z * q2.w + q1.x * q2.y - q1.y * q2.x);
+    public Quaternion multiply(final Quaternion q2) {
+        return new Quaternion(this.w * q2.w - this.x * q2.x - this.y * q2.y - this.z * q2.z, this.w * q2.x + this.x * q2.w + this.y * q2.z - this.z * q2.y,
+                this.w * q2.y + this.y * q2.w + this.z * q2.x - this.x * q2.z, this.w * q2.z + this.z * q2.w + this.x * q2.y - this.y * q2.x);
     }
 }
