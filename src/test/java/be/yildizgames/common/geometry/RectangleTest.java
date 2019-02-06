@@ -33,7 +33,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * @author Gregory Van den Borre
  */
-final class RectangleTest {
+public final class RectangleTest {
 
     private static final int LEFT = 5;
 
@@ -49,7 +49,7 @@ final class RectangleTest {
 
     /***/
     @Test
-    void containsTest() {
+    public void containsTest() {
 
         Point2D p = Point2D.valueOf(BETWEEN_LEFT_AND_RIGHT, BETWEEN_TOP_AND_BOTTOM);
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
@@ -70,7 +70,7 @@ final class RectangleTest {
 
     /***/
     @Test
-    void moveTest() {
+    public void moveTest() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         r.move(0, 0);
         Rectangle r2 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
@@ -85,7 +85,7 @@ final class RectangleTest {
     }
 
     @Test
-    void resetTest() {
+    public void resetTest() {
         Rectangle r = new Rectangle(10, 10, 20, 20);
         r.reset();
         assertEquals(0, r.getLeft());
@@ -97,53 +97,53 @@ final class RectangleTest {
     }
 
     @Test
-    void testEqualsNull() {
+    public void testEqualsNull() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertFalse(r1.equals(null));
     }
 
     @Test
-    void testEqualsOtherType() {
+    public void testEqualsOtherType() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertFalse(r1.equals(Boolean.TRUE));
     }
 
     @Test
-    void testEqualsSameInstance() {
+    public void testEqualsSameInstance() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(r1.equals(r1));
     }
 
     @Test
-    void testEqualsSameValue() {
+    public void testEqualsSameValue() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(r1.equals(r2));
     }
 
     @Test
-    void testEqualsNotSameLeft() {
+    public void testEqualsNotSameLeft() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT + 1, TOP, RIGHT, BOTTOM);
         assertFalse(r1.equals(r2));
     }
 
     @Test
-    void testEqualsNotSameRight() {
+    public void testEqualsNotSameRight() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT, TOP, RIGHT + 1, BOTTOM);
         assertFalse(r1.equals(r2));
     }
 
     @Test
-    void testEqualsNotSameTop() {
+    public void testEqualsNotSameTop() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT, TOP + 1, RIGHT, BOTTOM);
         assertFalse(r1.equals(r2));
     }
 
     @Test
-    void testEqualsNotSameBottom() {
+    public void testEqualsNotSameBottom() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM + 1);
         assertFalse(r1.equals(r2));
@@ -151,14 +151,14 @@ final class RectangleTest {
 
     /***/
     @Test
-    void testGetBottom() {
+    public void testGetBottom() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(equalFloat(r.getBottom(), BOTTOM));
     }
 
     /***/
     @Test
-    void testGetHeight() {
+    public void testGetHeight() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(equalFloat(r.getHeight(), BOTTOM - TOP));
         r = new Rectangle(RIGHT, BOTTOM, LEFT, TOP);
@@ -167,28 +167,28 @@ final class RectangleTest {
 
     /***/
     @Test
-    void testGetLeft() {
+    public void testGetLeft() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(equalFloat(r.getLeft(), LEFT));
     }
 
     /***/
     @Test
-    void testGetRight() {
+    public void testGetRight() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(equalFloat(r.getRight(), RIGHT));
     }
 
     /***/
     @Test
-    void testGetTop() {
+    public void testGetTop() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(equalFloat(r.getTop(), TOP));
     }
 
     /***/
     @Test
-    void testGetWidth() {
+    public void testGetWidth() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(equalFloat(r.getWidth(), RIGHT - LEFT));
         r = new Rectangle(RIGHT, TOP, LEFT, BOTTOM);
@@ -197,7 +197,7 @@ final class RectangleTest {
 
     /***/
     @Test
-    void testHashCode() {
+    public void testHashCode() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertEquals(r.hashCode(), r2.hashCode());
@@ -205,7 +205,7 @@ final class RectangleTest {
 
     /***/
     @Test
-    void testNormalize() {
+    public void testNormalize() {
         final int left = 4;
         final int right = 2;
         final int top = 41;
@@ -224,7 +224,7 @@ final class RectangleTest {
 
     /***/
     @Test
-    void testSetValues() {
+    public void testSetValues() {
         final int left = 4;
         final int right = 9;
         final int top = 1;
@@ -245,7 +245,7 @@ final class RectangleTest {
 
     /***/
     @Test
-    void testYzRectangle() {
+    public void testYzRectangle() {
         Rectangle r = new Rectangle();
         assertTrue(r.getLeft() == 0.0f);
         assertTrue(r.getRight() == 0.0f);
@@ -255,7 +255,7 @@ final class RectangleTest {
 
     /***/
     @Test
-    void testYzRectangleFloatFloatFloatFloat() {
+    public void testYzRectangleFloatFloatFloatFloat() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertTrue(equalFloat(r.getLeft(), LEFT));
         assertTrue(equalFloat(r.getRight(), RIGHT));
@@ -264,7 +264,7 @@ final class RectangleTest {
     }
 
     @Test
-    void testToString() {
+    public void testToString() {
         Rectangle r = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         assertEquals("be.yildiz.common.Rectangle(left=" + LEFT + ", top=" + TOP + ", right=" + RIGHT + ", bottom=" + BOTTOM + ")", r.toString());
     }

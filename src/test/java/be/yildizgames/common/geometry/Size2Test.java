@@ -26,10 +26,10 @@ package be.yildizgames.common.geometry;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class Size2Test {
+public class Size2Test {
 
     @Test
-    void constructor() {
+    public void constructor() {
         Size2 s = Size2.valueOf(4,5.2f);
         Assertions.assertEquals(4, s.width, 0.001);
         Assertions.assertEquals(5.2f, s.height, 0.001);
