@@ -22,6 +22,9 @@
  *
  */
 
+/**
+ * @author Grégory Van den Borre
+ */
 module be.yildizgames.common.geometry {
 
     exports be.yildizgames.common.geometry;

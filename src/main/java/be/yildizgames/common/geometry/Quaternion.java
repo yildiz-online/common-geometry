@@ -80,3 +80,4 @@ public final class Quaternion {
                 this.w * q2.y + this.y * q2.w + this.z * q2.x - this.x * q2.z, this.w * q2.z + this.z * q2.w + this.x * q2.y - this.y * q2.x);
     }
 }
+

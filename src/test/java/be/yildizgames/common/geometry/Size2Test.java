@@ -26,6 +26,9 @@ package be.yildizgames.common.geometry;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public class Size2Test {
 
     @Test

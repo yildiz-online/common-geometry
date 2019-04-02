@@ -26,3 +26,4 @@
  * @author Gregory Van den Borre
  */
 package be.yildizgames.common.geometry;
+

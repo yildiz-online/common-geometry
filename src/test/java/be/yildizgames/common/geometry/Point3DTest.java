@@ -71,7 +71,6 @@ public final class Point3DTest {
             assertFalse(p == result);
             assertEquals(Point3D.valueOf(2, 4, 6), result);
         }
-
     }
 
     @Nested

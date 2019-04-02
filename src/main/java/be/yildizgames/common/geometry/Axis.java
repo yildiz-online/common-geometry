@@ -45,5 +45,4 @@ public enum Axis {
      * Left view(if Y = up).
      */
     ZY
-
 }

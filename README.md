@@ -20,7 +20,7 @@ Project website:
 http://www.yildiz-games.be
 
 Issue tracker:
-https://yildiz.atlassian.net/browse/YCG
+https://yildiz.atlassian.net/
 
 Wiki:
 https://yildiz.atlassian.net/wiki

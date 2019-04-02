@@ -32,6 +32,9 @@ import static be.yildizgames.common.geometry.Radian.PI2;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public class RadianTest {
 
     @Nested

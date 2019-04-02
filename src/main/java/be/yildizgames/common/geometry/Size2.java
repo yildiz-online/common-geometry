@@ -23,6 +23,9 @@
  */
 package be.yildizgames.common.geometry;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public class Size2 {
 
     public static final Size2 ZERO = new Size2(0,0);

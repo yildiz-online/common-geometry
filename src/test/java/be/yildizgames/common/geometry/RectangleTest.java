@@ -273,3 +273,4 @@ public final class RectangleTest {
         return Float.compare(d1, d2) == 0;
     }
 }
+

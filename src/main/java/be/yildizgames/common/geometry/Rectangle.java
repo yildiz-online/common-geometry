@@ -244,3 +244,4 @@ public final class Rectangle {
         return "be.yildiz.common.Rectangle(left=" + this.getLeft() + ", top=" + this.getTop() + ", right=" + this.getRight() + ", bottom=" + this.getBottom() + ")";
     }
 }
+

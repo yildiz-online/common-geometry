@@ -163,3 +163,4 @@ public class Point2DTest {
         assertEquals("10.0,5.0", this.point.toString());
     }
 }
+

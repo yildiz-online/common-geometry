@@ -82,5 +82,4 @@ public class BaseTest<T>{
     public void hashcodeDifferent() {
         assertNotEquals(baseObject.hashCode(), different.hashCode());
     }
-
 }

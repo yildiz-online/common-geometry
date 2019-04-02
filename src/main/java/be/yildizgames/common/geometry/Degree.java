@@ -23,6 +23,9 @@
  */
 package be.yildizgames.common.geometry;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public class Degree {
 
     public static final Degree ZERO = new Degree(0.0f);
@@ -51,7 +54,7 @@ public class Degree {
         return v;
     }
 
-    public float getUniformValue() {
+    public final float getUniformValue() {
         return computeUniformValue(this.angle);
     }
 }
