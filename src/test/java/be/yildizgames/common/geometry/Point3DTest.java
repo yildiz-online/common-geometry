@@ -46,19 +46,6 @@ public final class Point3DTest {
             float result = Point3D.squaredDistance(p, p2);
             assertEquals(109.25, result, 0.00001f);
         }
-
-        @Test
-        public void withNullParam1() {
-            Point3D p = Point3D.valueOf(4, 6, 8);
-            assertThrows(AssertionError.class, () -> Point3D.squaredDistance(null, p));
-        }
-
-        @Test
-        public void withNullParam2() {
-            Point3D p = Point3D.valueOf(4, 6, 8);
-            assertThrows(AssertionError.class, () -> Point3D.squaredDistance(p, null));
-        }
-
     }
 
     @Nested
@@ -83,13 +70,6 @@ public final class Point3DTest {
             assertFalse(p == result);
             assertEquals(Point3D.valueOf(2, 4, 6), result);
         }
-
-        @Test
-        public void withNull() {
-            Point3D p = Point3D.valueOf(1, 2, 3);
-            assertThrows(AssertionError.class, () -> p.add(null));
-        }
-
     }
 
     @Nested
@@ -148,12 +128,6 @@ public final class Point3DTest {
         public void happyFlowZY() {
             assertEquals(Math.atan2(2, 3), Point3D.valueOf(1, 2, 3).getAngle(Axis.ZY), 0.001f);
         }
-
-        @Test
-        public void withNull() {
-            assertThrows(AssertionError.class, () -> Point3D.valueOf(1, 2, 3).getAngle(null));
-        }
-
     }
 
     @Nested
@@ -219,12 +193,6 @@ public final class Point3DTest {
             assertFalse(p == result);
             assertEquals(Point3D.valueOf(1, 2, 3), result);
         }
-
-        @Test
-        public void withNull() {
-            assertThrows(AssertionError.class, () -> Point3D.valueOf(2, 4, 6).subtract(null));
-        }
-
     }
 
     @Nested
@@ -373,18 +341,6 @@ public final class Point3DTest {
             assertEquals(11, result.y, 0.0001);
             assertEquals(16.5, result.z, 0.0001);
         }
-
-        @Test
-        public void withNull() {
-            Point3D p = Point3D.valueOf(4, 6, 8);
-            assertThrows(AssertionError.class, () -> Point3D.addPoints(p, null));
-        }
-
-        @Test
-        public void withNull2() {
-            Point3D p = Point3D.valueOf(4, 6, 8);
-            assertThrows(AssertionError.class, () -> Point3D.addPoints(null, p));
-        }
     }
 
     @Nested
@@ -397,11 +353,6 @@ public final class Point3DTest {
             assertEquals(0.37139, result.x, 0.0001);
             assertEquals(0.55708, result.y, 0.0001);
             assertEquals(0.74278, result.z, 0.0001);
-        }
-
-        @Test
-        public void withNull() {
-            assertThrows(AssertionError.class, () -> Point3D.normalize(null));
         }
     }
 
@@ -424,11 +375,6 @@ public final class Point3DTest {
             assertEquals(p.x, result.x, 0.0001);
             assertEquals(p.y, result.y, 0.0001);
             assertEquals(p.z, result.z, 0.0001);
-        }
-
-        @Test
-        public void withNull() {
-            assertThrows(AssertionError.class, () -> Point3D.normalizeAndMultiply(null, 2));
         }
     }
 

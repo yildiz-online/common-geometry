@@ -153,7 +153,6 @@ public final class Point3D {
         float y = 0;
         float z = 0;
         for (Point3D point : points) {
-            assert point != null;
             x += point.x;
             y += point.y;
             z += point.z;
@@ -179,7 +178,6 @@ public final class Point3D {
      * @return A new point normalized and multiplied.
      */
     public static Point3D normalizeAndMultiply(final Point3D p, final float scalar) {
-        assert p != null;
         float length = (float) Math.sqrt(p.x * p.x + p.y * p.y + p.z * p.z);
         if (Math.abs(length) > 0.000001f){
             return valueOf(scalar * (p.x / length), scalar * (p.y / length), scalar * (p.z / length));
@@ -195,8 +193,6 @@ public final class Point3D {
      * @return The squared distance between the 2 points.
      */
     public static float squaredDistance(final Point3D p1, final Point3D p2) {
-        assert p1 != null;
-        assert p2 != null;
         final float valueX = p1.x - p2.x;
         final float valueY = p1.y - p2.y;
         final float valueZ = p1.z - p2.z;
@@ -222,7 +218,6 @@ public final class Point3D {
      * @return A new point with added values.
      */
     public Point3D add(final Point3D point) {
-        assert point != null;
         return valueOf(this.x + point.x, this.y + point.y, this.z + point.z);
     }
 
@@ -263,7 +258,6 @@ public final class Point3D {
      * @return The point angle.
      */
     public float getAngle(final Axis axis) {
-        assert axis != null;
         switch (axis) {
             case XY:
                 return (float) Math.atan2(this.y, this.x);
@@ -307,7 +301,6 @@ public final class Point3D {
      * @return A new Point3D with the computed values.
      */
     public Point3D subtract(final Point3D point) {
-        assert point != null;
         return valueOf(this.x - point.x, this.y - point.y, this.z - point.z);
     }
 
