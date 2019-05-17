@@ -37,4 +37,5 @@ public class Size2Test {
         Assertions.assertEquals(4, s.width, 0.001);
         Assertions.assertEquals(5.2f, s.height, 0.001);
     }
+
 }

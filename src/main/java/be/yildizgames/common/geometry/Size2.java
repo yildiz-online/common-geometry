@@ -42,5 +42,4 @@ public class Size2 {
     public static Size2 valueOf(final float width, final float height) {
         return new Size2(width, height);
     }
-
 }
