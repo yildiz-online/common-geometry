@@ -31,6 +31,7 @@ package be.yildizgames.common.geometry;
  */
 public final class Rectangle {
 
+
     /**
      * Left X value.
      */

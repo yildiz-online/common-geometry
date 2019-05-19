@@ -35,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public final class RectangleTest {
 
+
     private static final int LEFT = 5;
 
     private static final int RIGHT = 15;

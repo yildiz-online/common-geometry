@@ -30,6 +30,7 @@ package be.yildizgames.common.geometry;
  * @author Gregory Van den Borre
  */
 public final class Point2D {
+
     /**
      * 0,0 coordinate point.
      */

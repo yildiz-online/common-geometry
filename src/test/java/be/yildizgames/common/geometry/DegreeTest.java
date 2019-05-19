@@ -38,4 +38,5 @@ public class DegreeTest {
         Assertions.assertEquals(450.0f, Degree.valueOf(450.0f).angle);
         Assertions.assertEquals(-17.3f, Degree.valueOf(-17.3f).angle);
     }
+
 }

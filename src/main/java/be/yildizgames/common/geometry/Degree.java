@@ -28,6 +28,7 @@ package be.yildizgames.common.geometry;
  */
 public class Degree {
 
+
     public static final Degree ZERO = new Degree(0.0f);
 
     public static final Degree HALF = new Degree(180.0f);

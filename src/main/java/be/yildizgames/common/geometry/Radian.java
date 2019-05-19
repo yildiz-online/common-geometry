@@ -31,6 +31,7 @@ package be.yildizgames.common.geometry;
  */
 public class Radian {
 
+
     public static final double PI2 = Math.PI * 2d;
 
     /**

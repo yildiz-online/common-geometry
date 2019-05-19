@@ -37,6 +37,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
  */
 public class RadianTest {
 
+
     @Nested
     public class ValueOf {
 

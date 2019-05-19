@@ -31,6 +31,7 @@ package be.yildizgames.common.geometry;
  */
 public enum Axis {
 
+
     /**
      * Front view(if Y = up).
      */

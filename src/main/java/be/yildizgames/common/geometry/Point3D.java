@@ -31,6 +31,7 @@ package be.yildizgames.common.geometry;
  */
 public final class Point3D {
 
+
     private static final float EPSILON = 0.00001f;
 
     public static final Point3D X_NEGATIVE = valueOfX(-1);

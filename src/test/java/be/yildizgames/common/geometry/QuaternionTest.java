@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
  */
 public class QuaternionTest {
 
+
     @Test
     public void constructor() {
         Quaternion q = Quaternion.valueOf(1,2,3,4);
