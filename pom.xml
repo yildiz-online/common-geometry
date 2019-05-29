@@ -29,7 +29,7 @@
   <name>Yildiz Common Geometry</name>
   <description>Common Geometry library for the yildiz project, contains utilities to handle geometry concepts.
   </description>
-  <url>https://bitbucket.org/yildiz-engine-team/common-geometry</url>
+  <url>https://engine.yildiz-games.be</url>
 
   <artifactId>common-geometry</artifactId>
   <version>1.0.7-SNAPSHOT</version>
@@ -37,9 +37,9 @@
   <packaging>jar</packaging>
   <inceptionYear>2017</inceptionYear>
   <scm>
-    <connection>scm:git:https://bitbucket.org/yildiz-engine-team/common-geometry</connection>
-    <developerConnection>scm:git:https://bitbucket.org/yildiz-engine-team/common-geometry</developerConnection>
-    <url>https://bitbucket.org/yildiz-engine-team/common-geometry</url>
+    <connection>scm:git:https://github.com/yildiz-online/common-geometry</connection>
+    <developerConnection>scm:git:https://github.com/yildiz-online/common-geometry</developerConnection>
+    <url>https://github.com/yildiz-online/common-geometry</url>
   </scm>
   <parent>
     <artifactId>parent</artifactId>
