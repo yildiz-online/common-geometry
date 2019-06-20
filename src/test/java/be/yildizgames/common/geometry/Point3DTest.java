@@ -29,6 +29,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 /**
  * @author Gregory Van den Borre
@@ -55,7 +56,7 @@ public final class Point3DTest {
         public void happyFlow() {
             Point3D p = Point3D.valueOf(1, 2, 3);
             Point3D result = p.add(1, 2, 3);
-            assertFalse(p == result);
+            assertNotSame(p, result);
             assertEquals(Point3D.valueOf(2, 4, 6), result);
         }
     }
@@ -67,7 +68,7 @@ public final class Point3DTest {
         public void happyFlow() {
             Point3D p = Point3D.valueOf(1, 2, 3);
             Point3D result = p.add(Point3D.valueOf(1, 2, 3));
-            assertFalse(p == result);
+            assertNotSame(p, result);
             assertEquals(Point3D.valueOf(2, 4, 6), result);
         }
     }
@@ -190,7 +191,7 @@ public final class Point3DTest {
         public void happyFlow() {
             Point3D p = Point3D.valueOf(2, 4, 6);
             Point3D result = p.subtract(Point3D.valueOf(1, 2, 3));
-            assertFalse(p == result);
+            assertNotSame(p, result);
             assertEquals(Point3D.valueOf(1, 2, 3), result);
         }
     }

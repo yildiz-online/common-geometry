@@ -28,6 +28,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -100,54 +101,54 @@ public final class RectangleTest {
     @Test
     public void testEqualsNull() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
-        assertFalse(r1.equals(null));
+        assertNotEquals(null, r1);
     }
 
     @Test
     public void testEqualsOtherType() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
-        assertFalse(r1.equals(Boolean.TRUE));
+        assertNotEquals(r1, Boolean.TRUE);
     }
 
     @Test
     public void testEqualsSameInstance() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
-        assertTrue(r1.equals(r1));
+        assertEquals(r1, r1);
     }
 
     @Test
     public void testEqualsSameValue() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
-        assertTrue(r1.equals(r2));
+        assertEquals(r1, r2);
     }
 
     @Test
     public void testEqualsNotSameLeft() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT + 1, TOP, RIGHT, BOTTOM);
-        assertFalse(r1.equals(r2));
+        assertNotEquals(r1, r2);
     }
 
     @Test
     public void testEqualsNotSameRight() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT, TOP, RIGHT + 1, BOTTOM);
-        assertFalse(r1.equals(r2));
+        assertNotEquals(r1, r2);
     }
 
     @Test
     public void testEqualsNotSameTop() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT, TOP + 1, RIGHT, BOTTOM);
-        assertFalse(r1.equals(r2));
+        assertNotEquals(r1, r2);
     }
 
     @Test
     public void testEqualsNotSameBottom() {
         Rectangle r1 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM);
         Rectangle r2 = new Rectangle(LEFT, TOP, RIGHT, BOTTOM + 1);
-        assertFalse(r1.equals(r2));
+        assertNotEquals(r1, r2);
     }
 
     /***/
@@ -248,10 +249,10 @@ public final class RectangleTest {
     @Test
     public void testYzRectangle() {
         Rectangle r = new Rectangle();
-        assertTrue(r.getLeft() == 0.0f);
-        assertTrue(r.getRight() == 0.0f);
-        assertTrue(r.getTop() == 0.0f);
-        assertTrue(r.getBottom() == 0.0f);
+        assertEquals(0.0f, r.getLeft());
+        assertEquals(0.0f, r.getRight());
+        assertEquals(0.0f, r.getTop());
+        assertEquals(0.0f, r.getBottom());
     }
 
     /***/
