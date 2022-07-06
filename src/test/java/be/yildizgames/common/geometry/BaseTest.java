@@ -29,20 +29,20 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * @author Gregory Van den Borre
  */
-public class BaseTest<T>{
+class BaseTest<T> {
 
     private final T baseObject;
     private final T same;
     private final T different;
 
-    public BaseTest(T baseObject, T same, T different) {
+    BaseTest(T baseObject, T same, T different) {
         super();
         this.baseObject = baseObject;
         this.same = same;
         this.different = different;
     }
 
-    public void all() {
+    void all() {
         equalsSame();
         equalsSameInstance();
         equalsDifferent();
@@ -52,31 +52,31 @@ public class BaseTest<T>{
         hashcodeDifferent();
     }
 
-    public void equalsSame() {
+    void equalsSame() {
         assertEquals(baseObject, same);
     }
 
-    public void equalsSameInstance() {
+    void equalsSameInstance() {
         assertEquals(baseObject, baseObject);
     }
 
-    public void equalsDifferent() {
+    void equalsDifferent() {
         assertNotEquals(baseObject, different);
     }
 
-    public void equalsNull() {
+    void equalsNull() {
         assertNotEquals(null, baseObject);
     }
 
-    public void equalsDifferentType() {
+    void equalsDifferentType() {
         assertNotEquals("ok", baseObject);
     }
 
-    public void hashcodeSame() {
+    void hashcodeSame() {
         assertEquals(baseObject.hashCode(), same.hashCode());
     }
 
-    public void hashcodeDifferent() {
+    void hashcodeDifferent() {
         assertNotEquals(baseObject.hashCode(), different.hashCode());
     }
 }

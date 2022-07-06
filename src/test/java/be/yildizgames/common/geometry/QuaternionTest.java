@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 /**
  * @author Grégory Van den Borre
  */
-public class QuaternionTest {
+class QuaternionTest {
 
 
     @Test
-    public void constructor() {
-        Quaternion q = Quaternion.valueOf(1,2,3,4);
+    void constructor() {
+        Quaternion q = Quaternion.valueOf(1, 2, 3, 4);
         Assertions.assertEquals(1, q.w);
         Assertions.assertEquals(2, q.x);
         Assertions.assertEquals(3, q.y);
@@ -19,9 +19,9 @@ public class QuaternionTest {
     }
 
     @Test
-    public void multiply() {
-        Quaternion q = Quaternion.valueOf(1,2,3,4);
-        Quaternion q2 = Quaternion.valueOf(5,6,7,8);
+    void multiply() {
+        Quaternion q = Quaternion.valueOf(1, 2, 3, 4);
+        Quaternion q2 = Quaternion.valueOf(5, 6, 7, 8);
         Quaternion result = q.multiply(q2);
         Assertions.assertEquals(1, q.w);
         Assertions.assertEquals(2, q.x);

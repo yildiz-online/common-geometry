@@ -35,69 +35,69 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 /**
  * @author Grégory Van den Borre
  */
-public class RadianTest {
+class RadianTest {
 
 
     @Nested
-    public class ValueOf {
+    class ValueOf {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Radian r = Radian.valueOf(1);
             assertEquals(r.angle, 1.0f);
         }
 
         @Test
-        public void lowLimit() {
+        void lowLimit() {
             Radian r = Radian.valueOf(0.0f);
             assertEquals(r.angle, 0.0f);
         }
 
         @Test
-        public void highLimit() {
-            Radian r = Radian.valueOf((float)PI2);
-            assertEquals(r.angle, (float)PI2);
+        void highLimit() {
+            Radian r = Radian.valueOf((float) PI2);
+            assertEquals(r.angle, (float) PI2);
         }
 
     }
 
     @Nested
-    public class FromDegree {
+    class FromDegree {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Radian r = Radian.valueOf(Degree.HALF);
-            assertEquals(r.angle, (float)Math.PI);
+            assertEquals(r.angle, (float) Math.PI);
         }
 
         @Test
-        public void lowLimit() {
+        void lowLimit() {
             Radian r = Radian.valueOf(Degree.ZERO);
             assertEquals(r.angle, 0.0f);
         }
 
         @Test
-        public void highLimit() {
+        void highLimit() {
             Radian r = Radian.valueOf(Degree.FULL);
-            assertEquals(r.angle, (float)PI2);
+            assertEquals(r.angle, (float) PI2);
         }
 
         @Test
-        public void tooLow() {
+        void tooLow() {
             assertEquals(Radian.valueOf(Degree.valueOf(359)), Radian.valueOf(Degree.valueOf(-1)));
         }
 
         @Test
-        public void tooHigh() {
+        void tooHigh() {
             assertEquals(Radian.valueOf(Degree.valueOf(1)), Radian.valueOf(Degree.valueOf(361)));
         }
     }
 
     @Nested
-    public class HashCode {
+    class HashCode {
 
         @Test
-        public void test() {
+        void test() {
             Radian r = Radian.valueOf(Degree.HALF);
             assertEquals(1078530042, r.hashCode());
         }
@@ -105,41 +105,41 @@ public class RadianTest {
     }
 
     @Nested
-    public class Equals {
+    class Equals {
 
         @Test
-        public void withNull() {
+        void withNull() {
             assertNotEquals(null, Radian.valueOf(Degree.HALF));
         }
 
         @Test
-        public void sameObject() {
+        void sameObject() {
             Radian r = Radian.valueOf(Degree.HALF);
             assertEquals(r, r);
         }
 
         @Test
-        public void sameValue() {
+        void sameValue() {
             assertEquals(Radian.valueOf(Degree.HALF), Radian.valueOf(Degree.HALF));
         }
 
         @Test
-        public void differentValue() {
+        void differentValue() {
             assertNotEquals(Radian.valueOf(Degree.valueOf(181.0f)), Radian.valueOf(Degree.HALF));
         }
 
         @Test
-        public void differentObject() {
+        void differentObject() {
             assertNotEquals(Radian.valueOf(Degree.HALF), "");
         }
 
     }
 
     @Nested
-    public class ToString {
+    class ToString {
 
         @Test
-        public void test() {
+        void test() {
             assertEquals("Radian value: 3.1415927", Radian.valueOf(Degree.HALF).toString());
         }
     }

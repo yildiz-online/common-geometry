@@ -35,7 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
  *
  * @author Gregory Van den Borre
  */
-public class Point2DTest {
+class Point2DTest {
 
     private static final int X = 10;
 
@@ -45,7 +45,7 @@ public class Point2DTest {
 
     /***/
     @Test
-    public void testAddIntInt() {
+    void testAddIntInt() {
         final int x2 = 3;
         final int y2 = -20;
         Point2D computed = this.point.add(x2, y2);
@@ -57,7 +57,7 @@ public class Point2DTest {
 
     /***/
     @Test
-    public void testAddPoint() {
+    void testAddPoint() {
         final int x2 = 3;
         final int y2 = 20;
         Point2D computed = this.point.add(Point2D.valueOf(x2, y2));
@@ -68,49 +68,49 @@ public class Point2DTest {
     }
 
     @Nested
-    public class Equals {
+    class Equals {
 
         @Test
-        public void withNull() {
+        void withNull() {
             assertNotEquals(null, point);
         }
 
         @Test
-        public void withWrongType() {
+        void withWrongType() {
             assertNotEquals(point, "");
         }
 
         @Test
-        public void sameObject() {
+        void sameObject() {
             assertEquals(point, point);
         }
 
         @Test
-        public void sameValue() {
+        void sameValue() {
             assertEquals(point, Point2D.valueOf(point.x, point.y));
         }
 
         @Test
-        public void differentX() {
+        void differentX() {
             assertNotEquals(point, Point2D.valueOf(point.x + 1, point.y));
         }
 
         @Test
-        public void differentY() {
+        void differentY() {
             assertNotEquals(point, Point2D.valueOf(point.x, point.y + 1));
         }
     }
 
     /***/
     @Test
-    public void testHashCode() {
+    void testHashCode() {
         Point2D point2 = Point2D.valueOf(this.point.x, this.point.y);
         assertEquals(this.point.hashCode(), point2.hashCode());
     }
 
     /***/
     @Test
-    public void testMultiplyByScalar() {
+    void testMultiplyByScalar() {
         Point2D computed = this.point.multiplyByScalar(10);
         assertEquals(this.point.x, Point2DTest.X, 0.0001);
         assertEquals(this.point.y, Point2DTest.Y, 0.0001);
@@ -120,14 +120,14 @@ public class Point2DTest {
 
     /***/
     @Test
-    public void testPoint() {
+    void testPoint() {
         assertEquals(0, Point2D.ZERO.x, 0.0001);
         assertEquals(0, Point2D.ZERO.y, 0.0001);
     }
 
     /***/
     @Test
-    public void testPointIntInt() {
+    void testPointIntInt() {
         assertEquals(this.point.x, Point2DTest.X, 0.0001);
         assertEquals(this.point.y, Point2DTest.Y, 0.0001);
     }
@@ -135,7 +135,7 @@ public class Point2DTest {
 
     /***/
     @Test
-    public void testSubtractIntInt() {
+    void testSubtractIntInt() {
         final int x2 = 3;
         final int y2 = -20;
         Point2D computed = this.point.subtract(x2, y2);
@@ -147,7 +147,7 @@ public class Point2DTest {
 
     /***/
     @Test
-    public void testSubtractPoint() {
+    void testSubtractPoint() {
         final int x2 = 3;
         final int y2 = 20;
         Point2D computed = this.point.subtract(Point2D.valueOf(x2, y2));
@@ -159,7 +159,7 @@ public class Point2DTest {
 
     /***/
     @Test
-    public void testToString() {
+    void testToString() {
         assertEquals("10.0,5.0", this.point.toString());
     }
 }

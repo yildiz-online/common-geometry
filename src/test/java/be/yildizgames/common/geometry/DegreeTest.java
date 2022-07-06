@@ -29,10 +29,10 @@ import org.junit.jupiter.api.Test;
 /**
  * @author Grégory Van den Borre
  */
-public class DegreeTest {
+class DegreeTest {
 
     @Test
-    public void constructor() {
+    void constructor() {
         Assertions.assertEquals(50.5f, Degree.valueOf(50.5f).angle);
         Assertions.assertEquals(0.0f, Degree.valueOf(0.0f).angle);
         Assertions.assertEquals(450.0f, Degree.valueOf(450.0f).angle);

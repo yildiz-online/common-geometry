@@ -29,11 +29,11 @@ import org.junit.jupiter.api.Test;
 /**
  * @author Grégory Van den Borre
  */
-public class Size2Test {
+class Size2Test {
 
     @Test
-    public void constructor() {
-        Size2 s = Size2.valueOf(4,5.2f);
+    void constructor() {
+        Size2 s = Size2.valueOf(4, 5.2f);
         Assertions.assertEquals(4, s.width, 0.001);
         Assertions.assertEquals(5.2f, s.height, 0.001);
     }

@@ -33,14 +33,14 @@ import static org.junit.jupiter.api.Assertions.assertNotSame;
 /**
  * @author Gregory Van den Borre
  */
-public final class Point3DTest {
+final class Point3DTest {
 
 
     @Nested
-    public class SquaredDistance {
+    class SquaredDistance {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(4, 6, 8);
             Point3D p2 = Point3D.valueOf(6, -1, 0.5f);
             float result = Point3D.squaredDistance(p, p2);
@@ -49,10 +49,10 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class Add {
+    class Add {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(1, 2, 3);
             Point3D result = p.add(1, 2, 3);
             assertNotSame(p, result);
@@ -61,10 +61,10 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class AddPoint {
+    class AddPoint {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(1, 2, 3);
             Point3D result = p.add(Point3D.valueOf(1, 2, 3));
             assertNotSame(p, result);
@@ -73,10 +73,10 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class AddX {
+    class AddX {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(1, 2, 3);
             Point3D p2 = p.addX(4);
             assertEquals(p.x + 4, p2.x, 0.001f);
@@ -86,10 +86,10 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class AddY {
+    class AddY {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(1, 2, 3);
             Point3D p2 = p.addY(4);
             assertEquals(p.x, p2.x, 0.001f);
@@ -99,10 +99,10 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class AddZ {
+    class AddZ {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(1, 2, 3);
             Point3D p2 = p.addZ(4);
             assertEquals(p.x, p2.x, 0.001f);
@@ -112,82 +112,82 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class GetAngle {
+    class GetAngle {
 
         @Test
-        public void happyFlowXy() {
+        void happyFlowXy() {
             assertEquals(Math.atan2(2, 1), Point3D.valueOf(1, 2, 3).getAngle(Axis.XY), 0.001f);
         }
 
         @Test
-        public void happyFlowXZ() {
+        void happyFlowXZ() {
             assertEquals(Math.atan2(3, 1), Point3D.valueOf(1, 2, 3).getAngle(Axis.XZ), 0.001f);
         }
 
         @Test
-        public void happyFlowZY() {
+        void happyFlowZY() {
             assertEquals(Math.atan2(2, 3), Point3D.valueOf(1, 2, 3).getAngle(Axis.ZY), 0.001f);
         }
     }
 
     @Nested
-    public class GetInverse {
+    class GetInverse {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             assertEquals(Point3D.valueOf(-1, -2, -3), Point3D.valueOf(1, 2, 3).getInverse());
         }
 
         @Test
-        public void zero() {
+        void zero() {
             assertEquals(Point3D.ZERO, Point3D.ZERO.getInverse());
         }
     }
 
     @Nested
-    public class Multiply {
+    class Multiply {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             assertEquals(Point3D.valueOf(2.5f, 5, 7.5f), Point3D.valueOf(1, 2, 3).multiply(2.5f));
         }
 
         @Test
-        public void zero() {
+        void zero() {
             assertEquals(Point3D.ZERO, Point3D.valueOf(-1, 2, 3).multiply(0));
         }
     }
 
     @Nested
-    public class Rounded {
+    class Rounded {
 
         @Test
-        public void half() {
+        void half() {
             assertEquals(Point3D.valueOf(3, 6, 8), Point3D.valueOf(2.5f, 5.5f, 7.5f).rounded());
         }
 
         @Test
-        public void floor() {
+        void floor() {
             assertEquals(Point3D.valueOf(2, 5, 7), Point3D.valueOf(2.1f, 5.1f, 7.1f).rounded());
         }
 
         @Test
-        public void ceil() {
+        void ceil() {
             assertEquals(Point3D.valueOf(3, 6, 8), Point3D.valueOf(2.9f, 5.9f, 7.9f).rounded());
         }
 
         @Test
-        public void zero() {
+        void zero() {
             assertEquals(Point3D.ZERO, Point3D.valueOf(0.4f, 0.3f, 0.1f).rounded());
         }
 
     }
 
     @Nested
-    public class Subtract {
+    class Subtract {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(2, 4, 6);
             Point3D result = p.subtract(Point3D.valueOf(1, 2, 3));
             assertNotSame(p, result);
@@ -196,39 +196,39 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class To {
+    class To {
 
         @Test
-        public void xy() {
+        void xy() {
             assertEquals(Point3D.valueOf(2, 4, 0), Point3D.valueOf(2, 4, 6).toXY());
         }
 
         @Test
-        public void xz() {
+        void xz() {
             assertEquals(Point3D.valueOf(2, 0, 6), Point3D.valueOf(2, 4, 6).toXZ());
         }
 
         @Test
-        public void yz() {
+        void yz() {
             assertEquals(Point3D.valueOf(0, 4, 6), Point3D.valueOf(2, 4, 6).toYZ());
         }
     }
 
     @Nested
-    public class HashCode {
+    class HashCode {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             assertEquals(Point3D.valueOf(2, 0, 6).hashCode(), Point3D.valueOf(2, 0, 6).hashCode());
         }
 
     }
 
     @Nested
-    public class Equals {
+    class Equals {
 
         @Test
-        public void base() {
+        void base() {
             Point3D base = Point3D.valueOf(2, 0, 6);
             Point3D same = Point3D.valueOf(2, 0, 6);
             Point3D diff = Point3D.valueOf(2, 1, 6);
@@ -237,10 +237,10 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class ValueOf {
+    class ValueOf {
 
         @Test
-        public void xyz() {
+        void xyz() {
             Point3D p = Point3D.valueOf(4, 6, 8);
             assertEquals(4, p.x, 0.0001);
             assertEquals(6, p.y, 0.0001);
@@ -248,7 +248,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void xyzSame() {
+        void xyzSame() {
             Point3D p = Point3D.valueOf(3);
             assertEquals(3, p.x, 0.0001);
             assertEquals(3, p.y, 0.0001);
@@ -256,7 +256,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void x() {
+        void x() {
             Point3D p = Point3D.valueOfX(5);
             assertEquals(5, p.x, 0.0001);
             assertEquals(0, p.y, 0.0001);
@@ -264,7 +264,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void y() {
+        void y() {
             Point3D p = Point3D.valueOfY(5);
             assertEquals(0, p.x, 0.0001);
             assertEquals(5, p.y, 0.0001);
@@ -272,7 +272,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void z() {
+        void z() {
             Point3D p = Point3D.valueOfZ(5);
             assertEquals(0, p.x, 0.0001);
             assertEquals(0, p.y, 0.0001);
@@ -280,7 +280,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void xy() {
+        void xy() {
             Point3D p = Point3D.valueOfXY(7, 5);
             assertEquals(7, p.x, 0.0001);
             assertEquals(5, p.y, 0.0001);
@@ -288,7 +288,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void xz() {
+        void xz() {
             Point3D p = Point3D.valueOfXZ(7, 5);
             assertEquals(7, p.x, 0.0001);
             assertEquals(0, p.y, 0.0001);
@@ -296,7 +296,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void yz() {
+        void yz() {
             Point3D p = Point3D.valueOfYZ(7, 5);
             assertEquals(0, p.x, 0.0001);
             assertEquals(7, p.y, 0.0001);
@@ -304,7 +304,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void xySame() {
+        void xySame() {
             Point3D p = Point3D.valueOfXY(5);
             assertEquals(5, p.x, 0.0001);
             assertEquals(5, p.y, 0.0001);
@@ -312,7 +312,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void xzSame() {
+        void xzSame() {
             Point3D p = Point3D.valueOfXZ(5);
             assertEquals(5, p.x, 0.0001);
             assertEquals(0, p.y, 0.0001);
@@ -320,7 +320,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void yzSame() {
+        void yzSame() {
             Point3D p = Point3D.valueOfYZ(5);
             assertEquals(0, p.x, 0.0001);
             assertEquals(5, p.y, 0.0001);
@@ -329,10 +329,10 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class AddPoints {
+    class AddPoints {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(4, 6, 8);
             Point3D p2 = Point3D.valueOf(6, -1, 0.5f);
             Point3D p3 = Point3D.valueOf(4, 6, 8);
@@ -344,10 +344,10 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class Normalize {
+    class Normalize {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(4, 6, 8);
             Point3D result = Point3D.normalize(p);
             assertEquals(0.37139, result.x, 0.0001);
@@ -357,10 +357,10 @@ public final class Point3DTest {
     }
 
     @Nested
-    public class NormalizeAnMultiply {
+    class NormalizeAnMultiply {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Point3D p = Point3D.valueOf(4, 6, 8);
             Point3D result = Point3D.normalizeAndMultiply(p, 2);
             assertEquals(0.74278, result.x, 0.0001);
@@ -369,7 +369,7 @@ public final class Point3DTest {
         }
 
         @Test
-        public void withZero() {
+        void withZero() {
             Point3D p = Point3D.ZERO;
             Point3D result = Point3D.normalizeAndMultiply(p, 2);
             assertEquals(p.x, result.x, 0.0001);
